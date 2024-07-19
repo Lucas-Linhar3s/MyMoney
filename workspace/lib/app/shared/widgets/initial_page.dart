@@ -16,7 +16,7 @@ class InitialPage extends StatefulWidget {
 class _InitialPageState extends State<InitialPage> {
   ListDebtsStore list = ListDebtsStore();
   CreateDebtsStore create = CreateDebtsStore();
-  int currentIndex = 1;
+  int currentIndex = 0;
   bool loading = true;
   List<Widget> pages = [
     const UsersPage(),

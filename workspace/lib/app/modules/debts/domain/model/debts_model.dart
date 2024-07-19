@@ -35,7 +35,16 @@ class DebtsModel {
         value_total: json['value_total'] ?? 0.0,
       );
 
-  static Map<String, dynamic> toJson(DebtsModel model) => {
+  static Map<String, dynamic> toJsonCreate(DebtsModel model) => {
+        'id': model.id ?? "",
+        'description': model.description,
+        'value': model.value,
+        'parcels': model.parcels,
+        'is_paid': model.is_paid,
+        'id_card': model.id_card,
+        'id_user': model.id_user,
+      };
+  static Map<String, dynamic> toJsonUpdate(DebtsModel model) => {
         'id': model.id ?? "",
         'description': model.description,
         'value': model.value,
