@@ -9,7 +9,7 @@ class UsecaseDebtsImpl implements IUsecaseDebts {
   @override
   Future<bool> create(DebtsModel model) async {
     try {
-      final map = DebtsModel.toJson(model);
+      final map = DebtsModel.toJsonCreate(model);
       return await _repositoryDebtsImpl.create(map);
     } on CustomExceptions {
       rethrow;
@@ -48,7 +48,7 @@ class UsecaseDebtsImpl implements IUsecaseDebts {
   @override
   Future<bool> update(DebtsModel model) async {
     try {
-      final map = DebtsModel.toJson(model);
+      final map = DebtsModel.toJsonCreate(model);
       return await _repositoryDebtsImpl.update(map);
     } on CustomExceptions {
       rethrow;
@@ -78,7 +78,7 @@ class UsecaseDebtsImpl implements IUsecaseDebts {
   @override
   Future<bool> updateParcels(DebtsModel model) async {
     try {
-      final map = DebtsModel.toJson(model);
+      final map = DebtsModel.toJsonCreate(model);
       return await _repositoryDebtsImpl.updateParcels(map);
     } on CustomExceptions {
       rethrow;

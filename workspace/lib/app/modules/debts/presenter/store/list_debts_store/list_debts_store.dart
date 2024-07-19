@@ -67,7 +67,7 @@ abstract class _ListDebtsStoreBase with Store {
     try {
       valueTotal = 0.00;
       debtsUsers = await usecase.findByIDUsers(idUser);
-      debtsJson = debtsUsers.map((e) => DebtsModel.toJson(e)).toList();
+      debtsJson = debtsUsers.map((e) => DebtsModel.toJsonUpdate(e)).toList();
       for (var i = 0; i < debtsUsers.length; i++) {
         if (debtsUsers[i].is_paid == 0) {
           valueTotal += debtsUsers[i].value;
