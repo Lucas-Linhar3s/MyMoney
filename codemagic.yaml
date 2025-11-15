@@ -1,0 +1,27 @@
+workflows:
+  build-android-apk:
+    name: Build Android APK
+    max_build_duration: 60
+    environment:
+      flutter: stable  # ou especifique uma versão como "3.22.2" se precisar
+      vars:
+        # Se precisar de keystore, adicione as variáveis e depois configure nos settings do Codemagic
+        # KEYSTORE_BASE64: Envie o keystore em base64 via UI e decodifique no script abaixo
+    scripts:
+      - name: Get dependencies
+        script: |
+          flutter pub get
+      - name: Flutter analyze
+        script: |
+          flutter analyze || true
+      - name: Build release APK
+        script: |
+          flutter clean
+          flutter pub get
+          flutter build apk --release --no-sound-null-safety
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
