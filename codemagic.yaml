@@ -4,7 +4,7 @@ workflows:
     max_build_duration: 60
     environment:
       flutter: stable  # ou especifique uma versão como "3.22.2" se precisar
-      vars:
+      # vars:
         # Se precisar de keystore, adicione as variáveis e depois configure nos settings do Codemagic
         # KEYSTORE_BASE64: Envie o keystore em base64 via UI e decodifique no script abaixo
     scripts:
